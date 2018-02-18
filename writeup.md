@@ -62,10 +62,10 @@ The model includes RELU layers to introduce nonlinearity (for instance in line 1
 
 Executing the code will display the network's architecture, thanks to the summary() function provided by Keras. This is what it should look like:
 
-|   |   |    |
-|Layer (type)            |         Output Shape      |    Param #     | Connected to      |               
+
+|Layer (type)            |         Output Shape      |    Param #     | Connected to      |  
 |:---------------------:|:-------------------:|:--------------:|:------------:| 
-|cropping2d_1 (Cropping2D)    |    (None, 90, 320, 3)  |  0      |     cropping2d_input_1[0][0]    |     
+|cropping2d_1 (Cropping2D)    |    (None, 90, 320, 3)  |  0      |     cropping2d_input_1[0][0]    |    
 |   |   |    |
 | lambda_1 (Lambda)             |   (None, 66, 200, 3) |   0      |     cropping2d_1[0][0] |              
 |   |   |    |
