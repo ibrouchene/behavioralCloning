@@ -81,7 +81,7 @@ Executing the code will display the network's architecture, thanks to the summar
 |   |   |    |
 | convolution2d_5 (Convolution2D) | (None, 9, 25, 64) |    27712  |     convolution2d_4[0][0] |           
 |   |   |    |
-| flatten_1 (Flatten)              (None, 14400)     |    0      |     convolution2d_5[0][0]  |          
+| flatten_1 (Flatten)     |         (None, 14400)     |    0      |     convolution2d_5[0][0]  |          
 |   |   |    |
 | dense_1 (Dense)          |        (None, 100)       |    1440100  |   flatten_1[0][0]     |             
 |   |   |    |
