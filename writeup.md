@@ -83,11 +83,19 @@ In order to get the model to work, I proceeded as such:
 
 * Generate a very small set of training data in order to get the car all the way up to the first left turn
 
-an initial try based on this dataset has proven to be already pretty effective. However I needed to "teach" the car to recover from moving too much on the side of the track. I therefore recorded a few recovery manoeuvers, as shown in this picture ![alt text][recovery]. 
+an initial try based on this dataset has proven to be already pretty effective. However I needed to "teach" the car to recover from moving too much on the side of the track. I therefore recorded a few recovery manoeuvers, as shown in this picture 
+
+![alt text][recovery]. 
+
+![alt text][recovery2].
 
 * Iteratively generate recovery images for difficult portions
 
-After that, the car was able to make it up to the bridge before crashing on the barrier, which led me to record a few more recovery images, on the bridge. ![alt text][bridgerecovery]. The last step was adding a few images for the left turn after the bridge (curve with sand on the side) and some other images to record a smooth drive over a curve.
+After that, the car was able to make it up to the bridge before crashing on the barrier, which led me to record a few more recovery images, on the bridge. 
+
+![alt text][bridgerecovery]. 
+
+The last step was adding a few images for the left turn after the bridge (curve with sand on the side) and some other images to record a smooth drive over a curve.
 
 
 That's it, with a surprisingly small amount of images (approx 5500), the car managed to learn good enough in order to complete one full lap around track 1 by itself!
