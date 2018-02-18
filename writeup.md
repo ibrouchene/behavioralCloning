@@ -144,3 +144,12 @@ This extension of the training set has proven to be beneficial to the model, the
 
 Before being fed in the network, the training data was shuffled and 20% of the available data was set aside for validation. After a few trials a number of epoch of 3 has proven to be enough for the task at hand. As mentionned before, there was no need to tune the learning rate since the network was being trained with an adam optimizer.
 
+
+The next steps, for a successful lap around track2, would be:
+
+* record more data on both tracks, for normal driving
+* record recovery data for difficult sections
+* introduce a histogram equalization layer for handling brightness differences in both sets of pictures
+* experiment with dropout in order to further generalize the model
+
+Due to a lack of time, these next steps will not be included in the official project submit.
