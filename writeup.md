@@ -60,6 +60,43 @@ Before entering the normalization layer, the images are cropped in order to remo
 
 The model includes RELU layers to introduce nonlinearity (for instance in line 144).
 
+Executing the code will display the network's architecture, thanks to the summary() function provided by Keras. This is what it should look like:
+
+____________________________________________________________________________________________________
+Layer (type)                     Output Shape          Param #     Connected to                     
+____________________________________________________________________________________________________
+cropping2d_1 (Cropping2D)        (None, 90, 320, 3)    0           cropping2d_input_1[0][0]         
+____________________________________________________________________________________________________
+lambda_1 (Lambda)                (None, 66, 200, 3)    0           cropping2d_1[0][0]               
+____________________________________________________________________________________________________
+lambda_2 (Lambda)                (None, 66, 200, 3)    0           lambda_1[0][0]                   
+____________________________________________________________________________________________________
+convolution2d_1 (Convolution2D)  (None, 33, 100, 3)    228         lambda_2[0][0]                   
+____________________________________________________________________________________________________
+convolution2d_2 (Convolution2D)  (None, 17, 50, 24)    1824        convolution2d_1[0][0]            
+____________________________________________________________________________________________________
+convolution2d_3 (Convolution2D)  (None, 9, 25, 36)     21636       convolution2d_2[0][0]            
+____________________________________________________________________________________________________
+convolution2d_4 (Convolution2D)  (None, 9, 25, 48)     15600       convolution2d_3[0][0]            
+____________________________________________________________________________________________________
+convolution2d_5 (Convolution2D)  (None, 9, 25, 64)     27712       convolution2d_4[0][0]            
+____________________________________________________________________________________________________
+flatten_1 (Flatten)              (None, 14400)         0           convolution2d_5[0][0]            
+____________________________________________________________________________________________________
+dense_1 (Dense)                  (None, 100)           1440100     flatten_1[0][0]                  
+____________________________________________________________________________________________________
+dense_2 (Dense)                  (None, 50)            5050        dense_1[0][0]                    
+____________________________________________________________________________________________________
+dense_3 (Dense)                  (None, 10)            510         dense_2[0][0]                    
+____________________________________________________________________________________________________
+dense_4 (Dense)                  (None, 1)             11          dense_3[0][0]                   
+____________________________________________________________________________________________________
+
+Total params: 1,512,671
+Trainable params: 1,512,671
+Non-trainable params: 0
+
+
 #### 2. Attempts to reduce overfitting in the model
 
 The model does not contains dropout layers. In order to reduce overfitting, the model was trained on all camera images, and each image was flipped in order to compensate for the left turn bias of track 1. 
